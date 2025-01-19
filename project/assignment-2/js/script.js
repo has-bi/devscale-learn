@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.querySelector(".start-button");
   const yesButton = document.querySelector(".yes-btn");
   const noButton = document.querySelector(".no-btn");
+  const hearts = document.querySelectorAll(".heart-icon");
   const playAgainButton = document.querySelector(".play-again");
   const timerElement = document.querySelector(".timer");
   const questionElement = document.querySelector(".question");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const response = await fetch(
-        "https://opentdb.com/api.php?amount=10&type=boolean"
+        "https://opentdb.com/api.php?amount=10&category=27&type=boolean"
       );
       const data = await response.json();
 
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Timer function
   function startTimer() {
-    timeLeft = 30;
+    timeLeft = 10;
     timerElement.textContent = timeLeft;
 
     timer = setInterval(() => {
@@ -88,11 +89,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
+  // Function to update heart icon
+  function updateHearts(remainingLives) {
+    hearts.forEach((heart, index) => {
+      if (index < remainingLives) {
+        // heart.style.display = "inline-block"; // Show heart
+        heart.style.opacity = "1";
+      } else {
+        heart.style.opacity = "0.2";
+      }
+    });
+  }
+
   // Handle timeout
   function handleTimeout() {
     clearInterval(timer);
     life--;
-    lifeCount.textContent = life;
+    updateHearts(life);
 
     if (life <= 0) {
       endGame();
@@ -112,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scoreCount.textContent = score;
     } else {
       life--;
-      lifeCount.textContent = life;
+      updateHearts(life);
 
       if (life <= 0) {
         endGame();
@@ -127,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function nextQuestion() {
     questions.shift();
     currentQuestion++;
+
+    document.querySelector(".current-question").textContent = currentQuestion;
 
     if (questions.length === 0) {
       endGame();
