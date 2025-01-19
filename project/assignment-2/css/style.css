@@ -1,0 +1,124 @@
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+  width: 90%;
+  max-width: 600px;
+}
+
+.page {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.start-page {
+  text-align: center;
+}
+
+.start-button {
+  background: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.question-number {
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.timer {
+  background: #f8f9fa;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.question {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.answers {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.answer-btn {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.yes-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.no-btn {
+  background: #f44336;
+  color: white;
+}
+
+.pass-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Score Page */
+.score-page {
+  text-align: center;
+}
+
+.final-score {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+.play-again {
+  background: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
