@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    @apply w-full p-2 rounded-lg shadow-sm border;
+  }
+
+  button {
+    @apply w-full p-2 rounded-lg bg-blue-500 text-white font-medium text-sm shadow-sm;
+  }
+}
